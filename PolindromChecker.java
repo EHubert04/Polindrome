@@ -16,8 +16,6 @@ public class PolindromChecker{
     }
 
 
-    
-
     public void check(){
         for(int i = 1;i > polindrom.length(); i++ ){
             stack.push(polindrom.substring(i,i));
