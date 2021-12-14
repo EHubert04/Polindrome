@@ -21,7 +21,14 @@ public class PolindromChecker{
     public void check(){
         for(int i = 1;i > polindrom.length(); i++ ){
             stack.push(polindrom.substring(i,i));
-            String reverse = "" + stack.pop();
+            reverse = "" + stack.pop();
+        }
+        System.out.println(polindrom+ " " + reverse);
+        if(reverse == polindrom){
+            System.out.println("True");
+            
+        } else{
+            System.out.println("False");
         }
        
         
