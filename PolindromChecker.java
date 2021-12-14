@@ -1,13 +1,14 @@
 import java.util.Scanner;
 public class PolindromChecker{
 
-    Scanner scan= new Scanner(System.in);
-    String polindrom = scan.nextLine();
     Stack stack = new Stack();
+    String polindrom; 
     String reverse = "";
 
     public PolindromChecker(){
-        // leerer Konstruktor
+        System.out.print("Bitte Wort eingeben: ");
+        Scanner scan = new Scanner(System.in);
+        polindrom = scan.nextLine();
     }
 
     public static void main(String[] args){
@@ -17,18 +18,17 @@ public class PolindromChecker{
 
 
     public void check(){
-        for(int i = 1;i > polindrom.length(); i++ ){
-            stack.push(polindrom.substring(i,i));
-            reverse = "" + stack.pop();
+        for(int i = polindrom.length();i > 0; i--){
+            stack.push(polindrom.substring(i-1,i));
+            System.out.println((polindrom.substring(i-1,i)));
+            reverse = reverse + stack.pop();
         }
-        System.out.println(polindrom+ " " + reverse);
-        if(reverse == polindrom){
+        System.out.println(polindrom + " = " + reverse);
+        if(reverse.equals(polindrom)){
             System.out.println("True");
             
         } else{
             System.out.println("False");
         }
-       
-        
     }
 }
